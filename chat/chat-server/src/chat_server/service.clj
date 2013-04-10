@@ -76,9 +76,9 @@
             :msg-data msg-data)
   (when msg-data
     ;; pr-str won't be needed in the future
-    (send-to-subscribers (pr-str msg-data)))
+    (let [msg-data (update-in msg-data [:text] str " jk lololol")]
+    (send-to-subscribers (pr-str msg-data))))
   (ring-response/response ""))
-
 
 (defn- session-id [] (.toString (java.util.UUID/randomUUID)))
 
