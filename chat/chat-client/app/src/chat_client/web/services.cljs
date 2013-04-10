@@ -61,7 +61,8 @@
                                              msg/type :received
                                              :text (:text data)
                                              :nickname (:nickname data)
-                                             :id (util/random-id)}))) ; TODO: track msg id throughout the system
+                                             :id (util/random-id)}))
+                              (.log js/console "Here I am")) ; TODO: track msg id throughout the system
                          false)
       (.addEventListener source
                          "open"
